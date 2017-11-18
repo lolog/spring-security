@@ -1,14 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix='sec' uri='http://www.springframework.org/security/tags' %>
 <html>
 <head>
     <title>Security Login</title>
 </head>
 <body>
-<form action="<%=request.getContextPath()%>/j_spring_security_check" method="post">
+<form action="/login1.do" method="post">
     <table>
         <tr>
             <td>Username：</td>
             <td><input type="text" name="username"/></td>
+            <input type="hidden" name="_csrf" value="${_csrf.token}">
+
+            <input type="hidden" name="_csrf" value="_csrf">
+            <input type="hidden" name="_csrf" value="${_csrf.token}">
+            <input type="hidden" name="_csrf_header" value="${_csrf.headerName}">
         </tr>
         <tr>
             <td>Password：</td>

@@ -9,8 +9,8 @@
 
     <modules>
         <module>security-simple</module>
-        <!---->
         <module>security-login-page</module>
+        <module>security-core</module>
     </modules>
 
     <properties>

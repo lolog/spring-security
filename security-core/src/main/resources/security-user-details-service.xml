@@ -7,10 +7,11 @@
           http://www.springframework.org/schema/security
           http://www.springframework.org/schema/security/spring-security-4.2.xsd">
 	<!--successful handler-->
-	<bean id="authSuccessHandler" class="net.spring.security.handler.AuthSuccessHandler"/>
+	<bean id="userServiceCustomizing" class="net.spring.security.core.service.UserServiceCustomizing"/>
 
 	<!--不通过security处理, 必须定义在前面-->
 	<security:http pattern="/none/*" security="none"/>
+	<security:http pattern="/deny/*" security="none"/>
 
 	<security:http auto-config="true" use-expressions="true">
 		<!--auth-->
@@ -25,21 +26,21 @@
 		 5. authentication-success-handler-ref 登陆成功处理器
 		-->
 		<security:form-login login-page="/login/login.jsp"
+							 login-processing-url="/login1.do"
 							 username-parameter="username"
 							 password-parameter="password"
 							 default-target-url="/index.jsp"
-							 authentication-failure-forward-url="/login/login-failure.jsp"
-							 authentication-success-handler-ref="authSuccessHandler"/>
+							 authentication-failure-forward-url="/login/login-failure.jsp"/>
+
+		<!--拒绝访问设置-->
+		<security:access-denied-handler error-page="/deny/index.jsp"/>
 		<!--匿名用户-->
 		<security:intercept-url pattern="/login/login.jsp" access="hasRole('ROLE_ANONYMOUS')"/>
+		<security:intercept-url pattern="/login.do" access="hasRole('ROLE_ANONYMOUS')"/>
 	</security:http>
 
 
-	<security:authentication-manager>
-		<security:authentication-provider>
-			<security:user-service>
-				<security:user name="user" password="user" authorities="ROLE_USER"/>
-			</security:user-service>
-		</security:authentication-provider>
+	<security:authentication-manager alias="authenticationManager">
+		<security:authentication-provider user-service-ref="userServiceCustomizing"/>
 	</security:authentication-manager>
 </beans>
