@@ -7,7 +7,7 @@
           http://www.springframework.org/schema/security
           http://www.springframework.org/schema/security/spring-security-4.2.xsd">
 	<!--successful handler-->
-	<bean id="userServiceCustomizing" class="net.spring.security.core.service.UserServiceCustomizing"/>
+	<bean id="userServiceCustomizing" class="net.spring.security.messages.core.service.UserServiceCustomizing"/>
 
 	<!--不通过security处理, 必须定义在前面-->
 	<security:http pattern="/none/*" security="none"/>

@@ -1,4 +1,4 @@
-package net.spring.security.handler;
+package net.spring.security.messages.handler;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;

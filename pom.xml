@@ -11,6 +11,7 @@
         <module>security-simple</module>
         <module>security-login-page</module>
         <module>security-core</module>
+        <module>security-messages</module>
     </modules>
 
     <properties>
@@ -84,6 +85,11 @@
                 <artifactId>servlet-api</artifactId>
                 <version>2.5</version>
                 <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>jstl</artifactId>
+                <version>1.2</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
