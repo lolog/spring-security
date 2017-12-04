@@ -7,7 +7,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
 
-public class AuthProviderCustoming implements AuthenticationProvider{
+public class AuthProviderCustomizing implements AuthenticationProvider{
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         UsernamePasswordAuthenticationToken token = (UsernamePasswordAuthenticationToken) authentication;
 
@@ -15,7 +15,7 @@ public class AuthProviderCustoming implements AuthenticationProvider{
 
         // obtain user information from database
 
-        if ("password".equals(token.getCredentials())) {
+        if (!"password".equals(token.getCredentials())) {
             throw new BadCredentialsException("Invalid Passwoed");
         }
         // UserDetails userDetails = Use

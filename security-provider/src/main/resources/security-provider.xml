@@ -8,12 +8,11 @@
           http://www.springframework.org/schema/security/spring-security-4.2.xsd">
 	<!--successful handler-->
 	<bean id="authServiceCustomizing" class="net.spring.security.provider.service.AuthServiceCustomizing"/>
-	<bean id="authProviderCustoming" class="net.spring.security.provider.service.AuthProviderCustoming"/>
+	<bean id="authProviderCustomizing" class="net.spring.security.provider.service.AuthProviderCustomizing"/>
 
 	<!--不通过security处理, 必须定义在前面-->
 	<security:http pattern="/none/*" security="none"/>
 	<security:http pattern="/deny/*" security="none"/>
-	<security:http pattern="/login/*" security="none"/>
 
 	<security:http auto-config="true" use-expressions="true">
 		<!--auth-->
@@ -32,7 +31,7 @@
 							 username-parameter="username"
 							 password-parameter="password"
 							 default-target-url="/index.jsp"
-							 authentication-failure-forward-url="/login/login-failure.jsp"/>
+							 authentication-failure-url="/login/login-failure.jsp"/>
 
 		<!--拒绝访问设置-->
 		<security:access-denied-handler error-page="/deny/index.jsp"/>
@@ -43,6 +42,6 @@
 
 	<security:authentication-manager alias="authenticationManager">
 		<security:authentication-provider user-service-ref="authServiceCustomizing"/>
-		<security:authentication-provider ref="authProviderCustoming"/>
+		<security:authentication-provider ref="authProviderCustomizing"/>
 	</security:authentication-manager>
 </beans>
