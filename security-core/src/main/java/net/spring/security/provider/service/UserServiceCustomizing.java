@@ -1,4 +1,4 @@
-package net.spring.security.messages.core.service;
+package net.spring.security.provider.service;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

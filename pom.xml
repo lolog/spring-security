@@ -12,6 +12,7 @@
         <module>security-login-page</module>
         <module>security-core</module>
         <module>security-messages</module>
+        <module>security-provider</module>
     </modules>
 
     <properties>

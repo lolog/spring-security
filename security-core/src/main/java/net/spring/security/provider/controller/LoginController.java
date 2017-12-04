@@ -1,4 +1,4 @@
-package net.spring.security.messages.core.controller;
+package net.spring.security.provider.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
