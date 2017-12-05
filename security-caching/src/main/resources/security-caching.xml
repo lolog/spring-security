@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:security="http://www.springframework.org/schema/security"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+          http://www.springframework.org/schema/security
+          http://www.springframework.org/schema/security/spring-security-4.2.xsd">
+	<!--successful handler-->
+	<bean id="authServiceCustomizing" class="net.spring.security.caching.service.AuthServiceCustomizing">
+		<property name="cacheName" value="cache_test"/>
+		<property name="cacheManager" ref="cacheManager"/>
+	</bean>
+
+	<bean id="authProviderCustomizing" class="net.spring.security.caching.service.AuthProviderCustomizing">
+		<property name="cacheName" value="cache_test"/>
+		<property name="cacheManager" ref="cacheManager"/>
+	</bean>
+
+	<!--不通过security处理, 必须定义在前面-->
+	<security:http pattern="/none/*" security="none"/>
+	<security:http pattern="/deny/*" security="none"/>
+
+	<security:http auto-config="false" use-expressions="true">
+		<!--auth-->
+		<security:intercept-url pattern="/auth/**" access="isAuthenticated()"/>
+
+		<!--login-->
+		<!--
+		 1. login-page 登陆界面
+		 2. login-processing-url 登陆处理URL
+		 3. username-parameter/password-parameter 表单提交的字段
+		 4. authentication-failure-forward-url 登陆失败跳转界面
+		 5. authentication-success-handler-ref 登陆成功处理器
+		-->
+		<security:form-login login-page="/login/login.jsp"
+							 login-processing-url="/login1.do"
+							 username-parameter="username"
+							 password-parameter="password"
+							 default-target-url="/index.jsp"
+							 authentication-failure-url="/login/login-failure.jsp"/>
+
+		<!--拒绝访问设置-->
+		<security:access-denied-handler error-page="/deny/index.jsp"/>
+		<!--匿名用户-->
+		<security:intercept-url pattern="/login/login.jsp" access="hasRole('ROLE_ANONYMOUS')"/>
+		<security:intercept-url pattern="/login.do" access="hasRole('ROLE_ANONYMOUS')"/>
+	</security:http>
+
+	<security:authentication-manager alias="authenticationManager">
+		<security:authentication-provider user-service-ref="authServiceCustomizing"/>
+		<security:authentication-provider ref="authProviderCustomizing"/>
+	</security:authentication-manager>
+</beans>
