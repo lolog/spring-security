@@ -23,9 +23,22 @@
 */*.iml
 .idea/
 
-# target
-*/target/
-*/*/target/
+# project
+/.idea/
+/.settings/
+.project
+*.iml
+/*/target/
+/*/*.iml
+/*/.settings/
+/*/.classpath
+/*/.classpath
+/*/.project
+
+# ehcache
+*.lock
+/*/.lock
+/*/.data
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*

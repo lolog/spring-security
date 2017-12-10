@@ -38,11 +38,12 @@
 	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="basenames">
 			<array>
-				<value>classpath:property/config</value>
+				<value>classpath:/property/config</value>
 			</array>
 		</property>
 		<property name="useCodeAsDefaultMessage" value="false"/>
+		<property name="fallbackToSystemLocale" value="false" />
 		<property name="defaultEncoding" value="UTF-8"/>
-		<property name="cacheSeconds" value="60"/>
+		<property name="cacheSeconds" value="3"/>
 	</bean>
 </beans>

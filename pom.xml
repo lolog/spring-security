@@ -13,6 +13,7 @@
         <module>security-core</module>
         <module>security-messages</module>
         <module>security-provider</module>
+        <module>security-caching</module>
     </modules>
 
     <properties>
@@ -39,6 +40,11 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-context</artifactId>
+                <version>4.2.2.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
                 <version>4.2.2.RELEASE</version>
             </dependency>
             <dependency>
