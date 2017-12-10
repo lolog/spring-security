@@ -1,4 +1,4 @@
-package net.spring.security.provider.service;
+package net.spring.security.core.service;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

@@ -1,4 +1,4 @@
-package net.spring.security.provider.controller;
+package net.spring.security.core.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;

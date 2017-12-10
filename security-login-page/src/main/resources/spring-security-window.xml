@@ -7,7 +7,7 @@
           http://www.springframework.org/schema/security
           http://www.springframework.org/schema/security/spring-security-4.2.xsd">
 	<!--successful handler-->
-	<bean id="authSuccessHandler" class="net.spring.security.messages.handler.AuthSuccessHandler"/>
+	<bean id="authSuccessHandler" class="net.spring.security.handler.AuthSuccessHandler"/>
 
 	<security:http auto-config="true" use-expressions="true">
 		<!--auth-->
