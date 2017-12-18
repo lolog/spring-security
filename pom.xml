@@ -14,6 +14,7 @@
         <module>security-messages</module>
         <module>security-provider</module>
         <module>security-caching</module>
+        <module>security-filter-customizing</module>
     </modules>
 
     <properties>
