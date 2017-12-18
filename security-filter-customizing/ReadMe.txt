@@ -8,3 +8,5 @@
   2. 扩展FilterInvocationSecurityMetadataSource - InvocationSecurityMetadataSourceCustomizing
   3. 扩展AccessDecisionManager - AccessDecisionManagerCustomizing
   4. 扩展UserDetailsService - UserDetailServiceCustomizing
+
+三.http://blog.csdn.net/chaozhi_guo/article/details/46365735
