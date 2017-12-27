@@ -2,15 +2,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	   xmlns:security="http://www.springframework.org/schema/security"
 	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	   xmlns:p="http://www.springframework.org/schema/p"
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans
           http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
           http://www.springframework.org/schema/security
-          http://www.springframework.org/schema/security/spring-security-4.2.xsd
-		  http://www.springframework.org/schema/p
-		  http://www.springframework.org/schema/p/spring-beans-4.2.xsd">
+          http://www.springframework.org/schema/security/spring-security-4.2.xsd">
 	<!--successful handler-->
-	<bean id="userServiceCustomizing" class="net.spring.security.filter.service.UserServiceCustomizing"/>
+	<bean id="userServiceCustomizing" class="net.spring.security.service.UserServiceCustomizing"/>
 
 	<!--不通过security处理, 必须定义在前面-->
 	<security:http pattern="/none/*" security="none"/>

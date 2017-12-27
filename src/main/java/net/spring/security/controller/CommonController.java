@@ -1,4 +1,4 @@
-package net.spring.security.core.controller;
+package net.spring.security.logout.controller;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

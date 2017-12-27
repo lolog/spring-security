@@ -5,7 +5,7 @@
     <title>Security Login</title>
 </head>
 <body>
-<form action="/login1.do" method="post">
+<form action="/login.do" method="post">
     <table>
         <tr>
             <td>Username：</td>

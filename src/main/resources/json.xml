@@ -6,7 +6,7 @@
           http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
 		  http://www.springframework.org/schema/context
 		  http://www.springframework.org/schema/context/spring-context-4.2.xsd">
-    <context:component-scan base-package="net.spring.security"/>
+    <context:component-scan base-package="net.spring.security.core.."/>
 
     <!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->
     <bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">

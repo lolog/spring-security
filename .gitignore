@@ -25,9 +25,11 @@
 
 # project
 /.idea/
+/target/
 /.settings/
 .project
 *.iml
+
 /*/target/
 /*/*.iml
 /*/.settings/

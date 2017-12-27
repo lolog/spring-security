@@ -7,7 +7,7 @@
           http://www.springframework.org/schema/security
           http://www.springframework.org/schema/security/spring-security-4.2.xsd">
 	<!--successful handler-->
-	<bean id="userServiceCustomizing" class="net.spring.security.core.service.UserServiceCustomizing"/>
+	<bean id="userServiceCustomizing" class="net.spring.security.service.UserServiceCustomizing"/>
 
 	<!--不通过security处理, 必须定义在前面-->
 	<security:http pattern="/none/*" security="none"/>
@@ -32,6 +32,7 @@
 							 default-target-url="/index.jsp"
 							 authentication-failure-forward-url="/login/login-failure.jsp"/>
 
+		<security:logout delete-cookies="JSESSIONID"/>
 		<!--拒绝访问设置-->
 		<security:access-denied-handler error-page="/deny/index.jsp"/>
 		<!--匿名用户-->

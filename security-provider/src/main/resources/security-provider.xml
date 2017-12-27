@@ -7,7 +7,6 @@
           http://www.springframework.org/schema/security
           http://www.springframework.org/schema/security/spring-security-4.2.xsd">
 	<!--successful handler-->
-	<bean id="authServiceCustomizing" class="net.spring.security.provider.service.AuthServiceCustomizing"/>
 	<bean id="authProviderCustomizing" class="net.spring.security.provider.service.AuthProviderCustomizing"/>
 
 	<!--不通过security处理, 必须定义在前面-->
@@ -27,7 +26,7 @@
 		 5. authentication-success-handler-ref 登陆成功处理器
 		-->
 		<security:form-login login-page="/login/login.jsp"
-							 login-processing-url="/login1.do"
+							 login-processing-url="/login.do"
 							 username-parameter="username"
 							 password-parameter="password"
 							 default-target-url="/index.jsp"
@@ -41,7 +40,6 @@
 	</security:http>
 
 	<security:authentication-manager alias="authenticationManager">
-		<security:authentication-provider user-service-ref="authServiceCustomizing"/>
 		<security:authentication-provider ref="authProviderCustomizing"/>
 	</security:authentication-manager>
 </beans>
