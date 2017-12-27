@@ -16,18 +16,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Controller
-public class LoginController {
-    @Autowired
-    private AuthenticationManager authenticationManager;
-
-    @RequestMapping("/login1.do")
-    public void login1 (@RequestParam(defaultValue="") String username,
-                        @RequestParam(defaultValue="") String password,
-                        HttpServletRequest request,
-                        HttpServletResponse response) throws IOException{
-        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(username,password);
-        Authentication authentication = authenticationManager.authenticate(token);
-        SecurityContextHolder.getContext().setAuthentication(authentication);
-        request.getSession().setAttribute("SPRING_SECURITY_CONTEXT", SecurityContextHolder.getContext());
+public class CommonController {
+    @ResponseBody
+    @RequestMapping("/info.do")
+    public Object info () throws IOException{
+        return SecurityContextHolder.getContext().getAuthentication();
     }
 }
