@@ -16,6 +16,7 @@
         <module>security-caching</module>
         <module>security-filter-customizing</module>
         <module>security-logout</module>
+        <module>security-anonymous</module>
     </modules>
 
     <properties>
