@@ -17,6 +17,7 @@
         <module>security-filter-customizing</module>
         <module>security-logout</module>
         <module>security-anonymous</module>
+        <module>security-remember-me</module>
     </modules>
 
     <properties>
