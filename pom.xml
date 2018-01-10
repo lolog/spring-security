@@ -18,6 +18,7 @@
         <module>security-logout</module>
         <module>security-anonymous</module>
         <module>security-remember-me</module>
+        <module>security-session</module>
     </modules>
 
     <properties>
